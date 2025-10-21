@@ -17,7 +17,6 @@
 ## GitHub / リンク
 
 - GitHub: [https://github.com/JunpeiKatayama](https://github.com/JunpeiKatayama)
-- 個人開発: [センリュウキング](https://senryu-king.com/)
 
 ---
 
@@ -115,26 +114,6 @@
 - 技術: Java, PostgreSQL, Oracle
 - 内容:
   - ERP 導入に伴うカスタマイズ、設計、実装、構築、テスト対応
-
----
-
-## 個人プロジェクト
-
-### [センリュウキング](https://senryu-king.com/)（2025 年 2 月〜現在）
-
-- 概要: 現代をテーマにした川柳の投稿・閲覧サイト
-- 役割: 企画・設計・開発・運用
-- 技術:
-  - フロントエンド: Next.js
-  - バックエンド: Firebase Functions (Node.js/TypeScript)
-  - データベース: Firestore
-  - ストレージ: Firebase Storage
-  - ホスティング: Firebase App Hosting
-  - 認証: Firebase Authentication
-  - 開発支援: Cursor
-- 特徴:
-  - 投稿、閲覧、認証といった基本機能
-  - モダン Web 技術を活用したフルスタック開発を実践
 
 ---
 
