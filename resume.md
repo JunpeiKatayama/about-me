@@ -14,9 +14,10 @@
 
 ---
 
-## GitHub / リンク
+## リンク
 
 - GitHub: [https://github.com/JunpeiKatayama](https://github.com/JunpeiKatayama)
+- Zenn: [https://zenn.dev/junpei_katayama](https://zenn.dev/junpei_katayama)
 
 ---
 
