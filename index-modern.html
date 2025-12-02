@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>職務経歴書 - 片山 順平</title>
+    <link rel="stylesheet" href="style-modern.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="nav-icon">👨‍💻</span>
+          <span class="nav-title">Junpei Katayama</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">旧バージョン</a>
+          <a href="https://github.com/JunpeiKatayama" class="nav-link" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">Software Engineer</div>
+          <h1 class="hero-title">片山 順平</h1>
+          <p class="hero-subtitle">Junpei Katayama</p>
+          <p class="hero-description">
+            バックエンド開発を中心に、設計から実装、テスト、運用保守まで幅広く経験。<br />
+            特にJava (Spring Boot) やKotlinを用いたREST API開発、AWS環境での<br class="hero-br" />
+            インフラ構築・運用、パフォーマンス改善に携わってきました。
+          </p>
+        </div>
+      </div>
+      <div class="hero-gradient"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-sticky">
+            <nav class="sidebar-nav" id="sidebar-nav">
+              <!-- Dynamic navigation will be inserted here -->
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <article class="content" id="content">
+          <!-- Markdown content will be inserted here -->
+        </article>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="footer-text">
+          最終更新日: <span id="last-updated">2025/10/21</span>
+        </p>
+        <p class="footer-links">
+          <a href="index.html">旧バージョン</a>
+          <span class="footer-separator">•</span>
+          <a href="https://github.com/JunpeiKatayama" target="_blank">GitHub</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Fetch and parse markdown
+      fetch("resume.md")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok " + response.statusText
+            );
+          }
+          return response.text();
+        })
+        .then((text) => {
+          // Configure marked.js
+          marked.setOptions({
+            highlight: function (code, lang) {
+              const language = hljs.getLanguage(lang) ? lang : "plaintext";
+              return hljs.highlight(code, { language }).value;
+            },
+            pedantic: false,
+            gfm: true,
+            breaks: false,
+            sanitize: false,
+            smartLists: true,
+            smartypants: false,
+            xhtml: false,
+          });
+
+          // Parse markdown
+          const html = marked.parse(text);
+          const contentDiv = document.getElementById("content");
+          contentDiv.innerHTML = html;
+
+          // Generate sidebar navigation from headings
+          generateSidebarNav();
+
+          // Add smooth scroll behavior
+          addSmoothScroll();
+
+          // Add intersection observer for active nav
+          addIntersectionObserver();
+
+          // Add animation on scroll
+          addScrollAnimation();
+        })
+        .catch((error) => {
+          console.error("Error fetching or parsing markdown:", error);
+          document.getElementById("content").innerHTML =
+            '<div class="error-message">エラー: resume.md を読み込めませんでした。</div>';
+        });
+
+      // Generate sidebar navigation from H2 headings
+      function generateSidebarNav() {
+        const content = document.getElementById("content");
+        const headings = content.querySelectorAll("h2");
+        const nav = document.getElementById("sidebar-nav");
+
+        if (headings.length === 0) return;
+
+        headings.forEach((heading, index) => {
+          // Add ID to heading for linking
+          const id = `section-${index}`;
+          heading.id = id;
+
+          // Create nav link
+          const link = document.createElement("a");
+          link.href = `#${id}`;
+          link.className = "sidebar-link";
+          link.textContent = heading.textContent;
+          nav.appendChild(link);
+        });
+      }
+
+      // Add smooth scroll behavior
+      function addSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              const navHeight = document.querySelector(".nav-header").offsetHeight;
+              const targetPosition = target.offsetTop - navHeight - 20;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      }
+
+      // Add intersection observer for active navigation
+      function addIntersectionObserver() {
+        const sections = document.querySelectorAll("h2[id]");
+        const navLinks = document.querySelectorAll(".sidebar-link");
+
+        const options = {
+          rootMargin: "-100px 0px -80% 0px",
+          threshold: 0,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${entry.target.id}`) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        }, options);
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+
+      // Add scroll animation
+      function addScrollAnimation() {
+        const animateElements = document.querySelectorAll("h2, h3, p, ul, ol, table, blockquote");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+          }
+        );
+
+        animateElements.forEach((el) => {
+          el.classList.add("animate-on-scroll");
+          observer.observe(el);
+        });
+      }
+
+      // Navbar scroll effect
+      let lastScroll = 0;
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".nav-header");
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll <= 0) {
+          nav.classList.remove("nav-scrolled");
+        } else {
+          nav.classList.add("nav-scrolled");
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
+  </body>
+</html>
