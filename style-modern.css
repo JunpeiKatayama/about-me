@@ -147,7 +147,10 @@ body {
 }
 
 .nav-icon {
-  font-size: var(--font-size-2xl);
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .nav-title {
@@ -555,6 +558,7 @@ body {
   padding: var(--space-20) var(--space-6) var(--space-12);
   margin-top: var(--space-20);
   position: relative;
+  overflow: visible;
 }
 
 .footer::before {
@@ -652,6 +656,27 @@ body {
 }
 
 /* ============================================
+   Footer Character
+   ============================================ */
+.footer-character {
+  position: absolute;
+  top: -230px;
+  right: 10%;
+  width: 380px;
+  height: 380px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.footer-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* ============================================
    Error Message
    ============================================ */
 .error-message {
@@ -692,7 +717,8 @@ body {
   }
 
   .nav-icon {
-    font-size: var(--font-size-xl);
+    height: 32px;
+    width: 32px;
   }
 
   .nav-links {
@@ -791,6 +817,13 @@ body {
   .footer-link {
     font-size: var(--font-size-sm);
     padding: var(--space-2) var(--space-4);
+  }
+
+  .footer-character {
+    top: -160px;
+    right: 5%;
+    width: 260px;
+    height: 260px;
   }
 }
 
