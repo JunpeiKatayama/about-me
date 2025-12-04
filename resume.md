@@ -1,6 +1,6 @@
-# 職務経歴書
+# About Me
 
-最終更新日: 2025/12/03
+最終更新日: 2025/12/04
 
 氏名: 片山 順平 (Junpei Katayama)
 
@@ -20,6 +20,7 @@
 - **フレームワーク**: Spring Boot, Doma
 - **クラウド/インフラ**: AWS (EC2, S3, RDS), Firebase, Docker, Linux
 - **データベース**: MySQL, PostgreSQL, Oracle, MongoDB
+- **AI開発ツール**: GitHub Copilot, Claude Code, Codex
 - **その他**: GraphQL, Git, New Relic, Datadog, Redash, BigQuery
 
 ---
