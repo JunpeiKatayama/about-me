@@ -9,18 +9,18 @@
 ## 概要
 
 バックエンド開発を中心に、設計から実装、テスト、運用保守まで幅広く経験。
-特に Java (Spring Boot) や Kotlin を用いた REST API 開発、AWS 環境でのインフラ構築・運用、パフォーマンス改善に強みを持ちます。  
-大規模システム（数千万ユーザー規模）の開発・運用経験を活かし、課題に対して主体的に向き合い解決していくことにやりがいを感じています。
+特に Java (Spring Boot) や Kotlin を用いた REST API 開発、パフォーマンス改善に強みを持ちます。  
+大規模システムの開発・運用経験を活かし、課題に対して主体的に向き合い解決していくことにやりがいを感じています。
 
 ---
 
 ## スキルセット
 
 - **言語**: Java, Kotlin, JavaScript, TypeScript, SQL
-- **フレームワーク**: Spring Boot, Doma
-- **クラウド/インフラ**: AWS (EC2, S3, RDS), Firebase, Docker, Linux
+- **フレームワーク**: Spring Boot
+- **クラウド/インフラ**: AWS (EC2, S3, RDS など), Firebase, Docker, Linux
 - **データベース**: MySQL, PostgreSQL, Oracle, MongoDB
-- **AI開発ツール**: GitHub Copilot, Claude Code, Codex
+- **AI 開発ツール**: GitHub Copilot, Claude Code, Codex
 - **その他**: GraphQL, Git, New Relic, Datadog, Redash, BigQuery
 
 ---
@@ -37,8 +37,6 @@
 
 - 数千万ユーザー規模の美容サロン予約システムの REST API 開発
 - 要件定義から実装、テスト、運用保守まで一貫して担当
-- Datadog・Redash によるログ・アラート監視体制の構築
-- BigQuery を活用したデータ分析および運用業務の効率化
 
 ### 2. 不動産手続きの Web システム化プロジェクト
 
@@ -64,7 +62,6 @@
 - **Push 通知処理のコスト削減: 月$17,000 → $5,000（約 70%削減）**
 - **通知バッチ処理時間の短縮: 12 時間 → 4 時間（66%改善）**
 - キャッシュ制御機構の実装によるレスポンス速度向上
-- JUnit 単体テスト約 500 件作成、リファクタリング 120 件以上実施
 
 ---
 
