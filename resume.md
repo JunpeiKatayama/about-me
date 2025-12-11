@@ -1,6 +1,6 @@
 # About Me
 
-最終更新日: 2025/12/04
+最終更新日: 2025/12/11
 
 氏名: 片山 順平 (Junpei Katayama)
 
@@ -77,5 +77,6 @@
 
 ## リンク
 
+- X: [https://x.com/poihey](https://x.com/poihey)
 - GitHub: [https://github.com/JunpeiKatayama](https://github.com/JunpeiKatayama)
 - Zenn: [https://zenn.dev/junpei_katayama](https://zenn.dev/junpei_katayama)
